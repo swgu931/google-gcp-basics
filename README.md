@@ -76,11 +76,15 @@ kubectl get nodes
 
 
 5. 웹 브라우저 대시보드에서 확인할 수 있도록...
+ : ref: https://kubernetes.io/ko/docs/tasks/access-application-cluster/web-ui-dashboard/
 ```
-kubectl proxy
+kubectl apply -f https://raw.githubusercontent.com/kubetm/kubetm.github.io/master/sample/practice/appendix/gcp-kubernetes-dashboard.yaml 
+kubectl proxy --port=8001
 ```
 
-6. access to http://127.0.0.1:8001
+6. access to http://127.0.0.1:8002/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default
+
+
 
 ---
 ## Follow the below step if you already have project and cluster
