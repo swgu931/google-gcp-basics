@@ -76,6 +76,7 @@ kubectl get nodes
 
 
 5. 웹 브라우저 대시보드에서 확인할 수 있도록...
+ 
  : ref: https://kubernetes.io/ko/docs/tasks/access-application-cluster/web-ui-dashboard/
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubetm/kubetm.github.io/master/sample/practice/appendix/gcp-kubernetes-dashboard.yaml 
