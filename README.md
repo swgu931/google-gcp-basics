@@ -13,18 +13,19 @@ gcloud auth login
 ```
 
 
-2. project create 
+2. project create or set configuration
 ```
 gcloud projects create lg-cloud-robot-20200731 --set-as-default
 ```
 - not working well so access to web site and create in the site. 
 
-
-3. GKE cluster create
 ```
-gcloud config set project lg-cloud-robot-20200731     # GCRP-test-prject in lggusewan@googlemail.com
+gcloud config set project lg-cloud-robot-20200731     # project in accountn@googlemail.com
 gcloud config set compute/zone asia-northeast3   # Seoul region
 
+```
+3. GKE cluster create
+```
 gcloud container clusters create swever-cloud --project=lg-cloud-robot-20200731 --cluster-version=1.15.12-gke.2 \
 --machine-type=n1-standard-1 \
 --num-nodes=1 \
@@ -56,7 +57,7 @@ gcloud container clusters describe swever-cloud
 ```
 
 
-4. gcloud로 클러스터를 제어할 수 있도록 kubectl 인증정보를 설정
+4. gcloud로 클러스터를 제어할 수 있도록 kubectl 인증정보를 설정/가져오기
 ```
 gcloud container clusters get-credentials swever-cloud
 ==> 확인: 
@@ -81,3 +82,13 @@ kubectl proxy
 
 6. access to http://127.0.0.1:8001
 
+---
+## Follow the below step if you already have project and cluster
+
+```
+gcloud auth login
+gcloud config set project lg-cloud-robot-20200731     # project in accountn@googlemail.com
+gcloud config set compute/zone asia-northeast3   # Seoul region
+gcloud container clusters get-credentials swever-cloud
+kubectl get nodes  
+```
