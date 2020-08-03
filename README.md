@@ -13,7 +13,7 @@ gcloud auth login
 ```
 
 
-2 project create 
+2. project create 
 ```
 gcloud projects create lg-cloud-robot-20200731 --set-as-default
 ```
