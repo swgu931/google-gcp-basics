@@ -1,9 +1,10 @@
 # kubernetes(k8s) cluster setup using kubespray & ansible
 
-## be ready
-- k8s operation server 
-- k8s master node 
-- k8s worker node
+## 0) Preparation
+
+- k8s operation server 1ea
+- k8s master node 3ea
+- k8s worker node 1ea
 - all host should be running on ubuntu
 - all server with closed private network ip address
 
