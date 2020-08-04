@@ -98,6 +98,9 @@ dashboard_enabled: true
 
 ## 5) Install Cluster 
 
+```
 (~/kubespray) $ ansible-playbook -i ./inventory/mycluster/hosts.ini ./cluster.yml
-
+```
+```
 master01:~# kubectl get nodes
+```
