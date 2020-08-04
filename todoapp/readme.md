@@ -1,5 +1,5 @@
 # Google kubernetes Engine 에 todo app service create
-ref: 도커/쿠버네티스를 활용한 컨테이너 개발 실전 입문 ch06
+ref textbook: 도커/쿠버네티스를 활용한 컨테이너 개발 실전 입문 ch06
 
 
 # Structure
@@ -55,7 +55,7 @@ kubectl get ingress
 ![todo app in GKE](./todoapp-GKE.jpg)
 
 
-## reference code from ch04
+## reference code from ch04 in textbook
 
 git clone https://github.com/gihyodocker/tododb
 
