@@ -1,4 +1,6 @@
 # google cloud platform gcp how to basic use
+: ref : 도커/쿠버네티스를 활용한 컨테이너 개발 실전 입문
+: All source used in this folder come from the ref.
 
 ## Using docker google/cloud-sdk not to install google cloud sdk                          
 ```
