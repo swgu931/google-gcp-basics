@@ -5,7 +5,7 @@
 
 ## Using docker google/cloud-sdk not to install google cloud sdk                          
 ```
-$docker run -it --rm -v ~/cloud-workspace/google-gcp-access:/shared:rw google/cloud-sdk:latest /bin/bash
+$docker run -it --rm --net host -v ~/cloud-workspace/google-gcp-access:/shared:rw google/cloud-sdk:latest /bin/bash
 ```
 
 ## in the shell of docker container 
