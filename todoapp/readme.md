@@ -52,7 +52,7 @@ kubectl apply -f ingress.yaml
 kubectl get ingress
 
 
-![todo app in GKE](./image/todoapp-GKE.jpg)
+![todo app in GKE](./todoapp-GKE.jpg)
 
 
 ## reference code from ch04
