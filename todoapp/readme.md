@@ -54,6 +54,9 @@ kubectl get ingress
 
 ![todo app in GKE](./todoapp-GKE.jpg)
 
+<img src="/todoapp-GKE.png"  width="300" height="200" rotation>
+
+출처: https://cutemoomin.tistory.com/112 [무민은귀여워]
 
 ## reference code from ch04 in textbook
 
