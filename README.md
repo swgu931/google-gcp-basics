@@ -41,15 +41,6 @@ gcloud container clusters create swever-cloud --project=lg-cloud-robot-20200731 
   swever-cloud  asia-northeast3  1.15.12-gke.2   34.64.158.235  n1-standard-1  1.15.12-gke.2  3          RUNNING
 
 
-#### to delete projects
-```
-gcloud endpoints services delete map.endpoints.second-base-252206.cloud.goog --project=second-base-252206
-gcloud endpoints services delete www.endpoints.second-base-252206.cloud.goog --project=second-base-252206
-gcloud projects delete second-base-252206
- You can undo this operation for a limited period by running the command below.
-     $ gcloud projects undelete second-base-252206
-```
-
 ```
 gcloud compute project-info describe --project lg-cloud-robot-20200731
 ```
@@ -97,4 +88,13 @@ gcloud config set project lg-cloud-robot-20200731     # project in accountn@goog
 gcloud config set compute/zone asia-northeast3   # Seoul region
 gcloud container clusters get-credentials swever-cloud
 kubectl get nodes  
+```
+
+### to delete projects after finishing project
+```
+gcloud endpoints services delete map.endpoints.second-base-252206.cloud.goog --project=second-base-252206
+gcloud endpoints services delete www.endpoints.second-base-252206.cloud.goog --project=second-base-252206
+gcloud projects delete second-base-252206
+ You can undo this operation for a limited period by running the command below.
+     $ gcloud projects undelete second-base-252206
 ```
