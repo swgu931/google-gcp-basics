@@ -20,7 +20,7 @@ gcloud auth login
 ```
 gcloud projects create lg-cloud-robot-20200731 --set-as-default
 ```
-- not working well so access to web site and create in the site. 
+- if not working well, then access to web site and create in the site directly
 
 ```
 gcloud config set project lg-cloud-robot-20200731     # project in accountn@googlemail.com
