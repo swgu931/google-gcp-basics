@@ -50,11 +50,9 @@ gcloud projects delete second-base-252206
      $ gcloud projects undelete second-base-252206
 ```
 
-==> quota 문제로 에러 발생
 ```
 gcloud compute project-info describe --project lg-cloud-robot-20200731
 ```
-- cpus, In-use IP addresses 의  quota 조정
 ```
 gcloud container clusters describe swever-cloud
 ```
