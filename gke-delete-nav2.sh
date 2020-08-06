@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 export my-gcp-project = "my-gcp-project"
 export my-gke-cluster = "my-gke-cluster"
