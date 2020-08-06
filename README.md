@@ -92,9 +92,9 @@ kubectl get nodes
 
 ### to delete projects after finishing project
 ```
-gcloud endpoints services delete map.endpoints.second-base-252206.cloud.goog --project=second-base-252206
-gcloud endpoints services delete www.endpoints.second-base-252206.cloud.goog --project=second-base-252206
-gcloud projects delete second-base-252206
+gcloud endpoints services delete map.endpoints.lg-cloud-robot-20200731.cloud.goog --project=lg-cloud-robot-20200731
+gcloud endpoints services delete www.endpoints.lg-cloud-robot-20200731.cloud.goog --project=lg-cloud-robot-20200731
+gcloud projects delete lg-cloud-robot-20200731
  You can undo this operation for a limited period by running the command below.
-     $ gcloud projects undelete second-base-252206
+     $ gcloud projects undelete lg-cloud-robot-20200731
 ```
