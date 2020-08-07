@@ -38,7 +38,6 @@ kubectl exec -it mysql-slave-0 -- bash
     mysql> SHOW DATABASE();
     mysql> USE tododb;
     mysql> SHOW TABLES;
-
 ```
 
 2) api service
