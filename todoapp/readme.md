@@ -34,7 +34,11 @@ kubectl exec -it mysql-master-0 init-data.sh
 kubectl exec -it mysql-slave-0 -- bash
 ```
 ```
-$ mysql -u root -pgihyo tododb -e "SHOW TABLES;"
+  root@mysql-slave-0:/# mysql -u root -pgihyo 
+    mysql> SHOW DATABASE();
+    mysql> USE tododb;
+    mysql> SHOW TABLES;
+
 ```
 
 2) api service
