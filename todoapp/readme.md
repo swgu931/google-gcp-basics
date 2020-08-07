@@ -34,6 +34,7 @@ kubectl apply -f mysql-slave.yaml
 kubectl exec -it mysql-master-0 init-data.sh
 
 kubectl exec -it mysql-slave-0 -- bash
+  
   $ mysql -u root -pgihyo tododb -e "SHOW TABLES;"
 
 
