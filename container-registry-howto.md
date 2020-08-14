@@ -19,11 +19,11 @@ docker tag nginx:latest asia.gcr.io/test-project/nginx:test-1
 ```
 - docker push [HOSTNAME]/[PROJECT-ID]/[IMAGE]
 ```
-docker push asia.gcr.io/lg-cloud-robot-20200731/cloud_nav2:1.4.0-r4
+docker push asia.gcr.io/test-project/nginx:test-1
 ```
 - gcloud container images list-tags [HOSTNAME]/[PROJECT-ID]/[IMAGE]
 ```
-gcloud container iamges list-tags asia.gcr.iop/lg-cloud-robot-20200731/cloud_nav2:1.4.0-r4
+gcloud container iamges list-tags asia.gcr.io/test-project/nginx:test-1
 ```
 
 - docker pull [HOSTNAME]/[PROJECT-ID]/[IMAGE]:[TAG]
