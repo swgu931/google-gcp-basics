@@ -23,7 +23,7 @@ docker push asia.gcr.io/test-project/nginx:test-1
 ```
 - gcloud container images list-tags [HOSTNAME]/[PROJECT-ID]/[IMAGE]
 ```
-gcloud container iamges list-tags asia.gcr.io/test-project/nginx:test-1
+gcloud container images list-tags asia.gcr.io/test-project/nginx
 ```
 
 - docker pull [HOSTNAME]/[PROJECT-ID]/[IMAGE]:[TAG]
