@@ -18,18 +18,18 @@ gcloud auth login
 
 2. project create or set configuration
 ```
-gcloud projects create lg-cloud-robot-20200731 --set-as-default
+gcloud projects create project-cloud-test --set-as-default
 ```
 - if not working well, then access to web site and create in the site directly
 
 ```
-gcloud config set project lg-cloud-robot-20200731     # project in accountn@googlemail.com
+gcloud config set project project-cloud-test     # project in accountn@googlemail.com
 gcloud config set compute/zone asia-northeast3   # Seoul region
 
 ```
 3. GKE cluster create
 ```
-gcloud container clusters create swever-cloud --project=lg-cloud-robot-20200731 --cluster-version=1.15.12-gke.2 \
+gcloud container clusters create swever-cloud --project=project-cloud-test --cluster-version=1.15.12-gke.2 \
 --machine-type=n1-standard-1 \
 --num-nodes=1 \
 --subnetwork=default
@@ -42,7 +42,7 @@ gcloud container clusters create swever-cloud --project=lg-cloud-robot-20200731 
 
 
 ```
-gcloud compute project-info describe --project lg-cloud-robot-20200731
+gcloud compute project-info describe --project project-cloud-test
 ```
 ```
 gcloud container clusters describe swever-cloud
@@ -84,7 +84,7 @@ kubectl proxy --port=8001
 
 ```
 gcloud auth login
-gcloud config set project lg-cloud-robot-20200731     # project in accountn@googlemail.com
+gcloud config set project project-cloud-test     # project in accountn@googlemail.com
 gcloud config set compute/zone asia-northeast3   # Seoul region
 gcloud container clusters get-credentials swever-cloud
 kubectl get nodes  
@@ -92,9 +92,9 @@ kubectl get nodes
 
 ### to delete projects after finishing project
 ```
-gcloud endpoints services delete map.endpoints.lg-cloud-robot-20200731.cloud.goog --project=lg-cloud-robot-20200731
-gcloud endpoints services delete www.endpoints.lg-cloud-robot-20200731.cloud.goog --project=lg-cloud-robot-20200731
-gcloud projects delete lg-cloud-robot-20200731
+gcloud endpoints services delete map.endpoints.project-cloud-test.cloud.goog --project=project-cloud-test
+gcloud endpoints services delete www.endpoints.project-cloud-test.cloud.goog --project=project-cloud-test
+gcloud projects delete project-cloud-test
  You can undo this operation for a limited period by running the command below.
-     $ gcloud projects undelete lg-cloud-robot-20200731
+     $ gcloud projects undelete project-cloud-test
 ```
