@@ -41,11 +41,13 @@ cd kubespray && git checkout release-2.11
 (~/kubespray) pip install -r requirements.txt
 ```
 ```
-(~/kubespray) cp -rfp inventory/sample inventory/mycluster
-(~/kubespray) declare -a IPS=(10.90.65.11 10.90.65.12 10.90.65.13 10.90.65.21)
-(~/kubespray) CONFIG_FILE=inventory/mycluster/hosts.ini python3
-(~/kubespray) chmod a+x contrib/inventory_builder/inventory.py 
-(~/kubespray) contrib/inventory_builder/inventory.py ${IPS[0]}
+cd ~/kubespray
+
+cp -rfp inventory/sample inventory/mycluster
+declare -a IPS=(10.90.65.11 10.90.65.12 10.90.65.13 10.90.65.21)
+CONFIG_FILE=inventory/mycluster
+chmod a+x contrib/inventory_builder/inventory.py 
+contrib/inventory_builder/inventory.py ${IPS[0]}
 ```
 
 ## 3) Setup K8s Cluster server in operation server
@@ -53,10 +55,10 @@ cd kubespray && git checkout release-2.11
 vi ./inventory/mycluster/hosts.ini
 ```
 [all]
-master01 ansible_host=10.90.65.11 ip=10.90.65.11
-master02 ansible_host=10.90.65.12 ip=10.90.65.12
-master03 ansible_host=10.90.65.13 ip=10.90.65.13
-node01 ansible_host=10.90.65.21 ip=10.90.65.21
+master01 ansible_host=10.90.65.11 # ip=10.90.65.11
+master02 ansible_host=10.90.65.12 # ip=10.90.65.12
+master03 ansible_host=10.90.65.13 # ip=10.90.65.13
+node01 ansible_host=10.90.65.21 # ip=10.90.65.21
 
 [kube-master]
 master01
