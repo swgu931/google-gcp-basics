@@ -16,10 +16,10 @@ $ ssh-keygen -t rsa
 ssh-rsa AAAXXXXXXX...
 
 ```
-$ (root@master01) echo "ssh-rsa AAAXXXXXXX..." >> ~/.ssh/authorized.keys
-$ (root@master02) echo "ssh-rsa AAAXXXXXXX..." >> ~/.ssh/authorized.keys
-$ (root@master03) echo "ssh-rsa AAAXXXXXXX..." >> ~/.ssh/authorized.keys
-$ (root@node01) echo "ssh-rsa AAAXXXXXXX..." >> ~/.ssh/authorized.keys
+$ (root@master01) echo "ssh-rsa AAAXXXXXXX..." >> ~/.ssh/authorized_keys
+$ (root@master02) echo "ssh-rsa AAAXXXXXXX..." >> ~/.ssh/authorized_keys
+$ (root@master03) echo "ssh-rsa AAAXXXXXXX..." >> ~/.ssh/authorized_keys
+$ (root@node01) echo "ssh-rsa AAAXXXXXXX..." >> ~/.ssh/authorized_keys
 ```
 
 ## 2) enable IPv4 forwarding in each server
