@@ -10,6 +10,9 @@
 - setup '--preemptible' optino to reduce GCP cost
 - --source-snapshot would be different
 ```
+gcloud compute instances create op-server --source-snapshot=https://compute.googleapis.com/compute/v1/projects/cloud-test/global/snapshots/snapshot-cloud-test \ \
+--zone=asia-northeast3-a --machine-type=n1-standard-2 --preemptible --tags=nav2-port,nav2-port-snd,socket-test,socket-test-send 
+
 gcloud compute instances create master01 --source-snapshot=https://compute.googleapis.com/compute/v1/projects/cloud-test/global/snapshots/snapshot-cloud-test \ \
 --zone=asia-northeast3-a --machine-type=n1-standard-2 --preemptible --tags=nav2-port,nav2-port-snd,socket-test,socket-test-send 
 
@@ -24,7 +27,7 @@ gcloud compute instances create node01 --source-snapshot=https://compute.googlea
 ```
 
 
-## 1) operation server SSH key genearation (op)
+## 1) operation server SSH key genearation (op-server)
 ```
 $ ssh-keygen -t rsa
 ```
