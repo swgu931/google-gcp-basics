@@ -1,0 +1,114 @@
+8) 핸즈온 - Cloud Armor를 이용한 웹사이트 보호
+
+*Google Cloud HTTP(S) 부하 분산은 전 세계 Google의 접속 지점 (POP)에있는 Google 네트워크의 에지(edge)에서 구현됩니다. HTTP(S) 부하 분산기로 전달되는 사용자 트래픽은 사용자와 가장 가까운 POP로 들어간 다음 Google의 글로벌 네트워크를 통해 사용 가능한 충분한 용량이있는 가장 가까운 백엔드로 부하 분산됩니다.
+
+Cloud Armor IP 허용 목록 / 거부 목록을 사용하면 Google Cloud 에지에서 HTTP(S) 부하 분산기에 대한 액세스를 사용자 및 악성 트래픽에 최대한 가깝게 제한하거나 허용 할 수 있습니다. 이렇게 하면 악의적인 사용자 또는 트래픽이 리소스를 사용하거나 가상 사설 클라우드 (VPC) 네트워크에 들어가는 것을 방지 할 수 있습니다.
+
+이 실습에서는 아래 다이어그램과 같이 글로벌 백엔드로 HTTP 부하 분산기를 구성합니다. 그런 다음 부하 분산기를 스트레스 테스트하고 Cloud Armor를 사용하여 스트레스 테스트 IP를 거부합니다.
+
+이 랩에서는 위에서 만들었던 Load Balancer를 사용합니다.
+
+
+
+1. Stress test the HTTP Load Balancer
+*Create a new VM to simulate a load on the HTTP Load Balancer using siege. Then, determine if traffic is balanced across both backends when the load is high.
+
+gcloud compute instances create siege-vm ...
+
+*ref: gcloud compute instances create gcp-cloud-nav-03 --source-snapshot=https://compute.googleapis.com/compute/v1/projects/$PROJECT_ID/global/snapshots/snapshot-cloud \
+--zone=asia-northeast3-a --machine-type=n1-standard-1 --preemptible --tags=socket-test,socket-test-send 
+
+*in the siege-vm instance)
+sudo apt-get -y install siege
+
+To store the IPv4 address of the HTTP Load Balancer in an environment variable, run the following command, replacing [LB_IP_v4] with the IPv4 address (로드밸런서 주소는 Cloud Shell에서 gcloud compute forwarding-rules list --global 명령을 실행해서 구합니다):
+gcloud compute forwarding-rules list --global
+
+export LB_IP=[LB_IP_v4]
+
+*To simulate a load, run the following command:
+siege -c 250 http://$LB_IP/api/products
+
+*In the Cloud Console, on the Navigation menu (), click Network Services > Load balancing.
+*Click Backends.
+*Click fancy-be-products.
+
+Return to the SSH terminal of siege-vm.
+Press CTRL+C to stop siege.
+
+
+
+2. Denylist the siege-vm
+*Use Cloud Armor to denylist the siege-vm from accessing the HTTP Load Balancer.
+
+Create the security policy
+Create a Cloud Armor security policy with a denylist rule for the siege-vm.
+
+
+*Note the External IP of the siege-vm. This will be referred to as [SIEGE_IP].
+*In the Cloud Console, navigate to Navigation menu > Network Security > Cloud Armor.
+*Click Create policy.
+*Set the following values, leave all other values at their defaults:
+----------------------------------------------------------------------
+Property                |  Value (type value or select option as specified)
+Name                    |  denylist-siege
+Default rule action     |  Allow
+----------------------------------------------------------------------
+*Click Next step.
+*Click Add rule.
+
+*Set the following values, leave all other values at their defaults:
+----------------------------------------------------------------------
+Property                |  Value (type value or select option as specified)
+Condition		| Enter the SIEGE_IP
+Action			| Deny
+Deny status		| 403 (Forbidden)
+Priority		| 1000
+----------------------------------------------------------------------
+*Click Done.
+*Click Next step.
+*Click Add Target.
+*For Type, select Load balancer backend service.
+*For Target, select fancy-be-products.
+*Click Done.
+*Click Create policy.
+ - Alternatively, you could set the default rule to Deny and only allowlist/allow traffic from authorized users/IP addresses.
+*Wait for the policy to be created before moving to the next step.
+
+
+
+
+3. Verify the security policy
+   Verify that the siege-vm cannot access the HTTP Load Balancer. (활성화까지 약 5분 정도 시간 소요 됨)
+
+*Return to the SSH terminal of siege-vm.
+*To access the load balancer, run the following:
+curl http://$LB_IP
+
+*Open a new tab in your browser and navigate to http://[LB_IP_v4]. Make sure to replace [LB_IP_v4] with the IPv4 address of the load balancer.
+You can access the HTTP Load Balancer from your browser because of the default rule to allow traffic; however, you cannot access it from the siege-vm because of the deny rule that you implemented.
+
+*siege -c 250 http://$LB_IP
+ : Explore the security policy logs to determine if this traffic is also blocked.
+
+*In the Console, navigate to Navigation menu > Network Security > Cloud Armor.
+*Click denylist-siege.
+*Click Logs.
+*Click View policy logs.
+*On the Logging page, in the first dropdown list, select Cloud HTTP Load Balancer > http-lb-forwarding-rule > fancy-http-rule.
+*Make sure to clear all the text in the filter text area by clicking the X next to them.
+*Expand a log entry.
+*Expand httpRequest.
+*The request should be from the siege-vm IP address. If not, expand another log entry.
+
+*Expand jsonPayload.
+*Expand enforcedSecurityPolicy.
+*Notice that the configuredAction is to DENY with the name denylist-siege.
+
+*Cloud Armor security policies create logs that can be explored to determine when traffic is denied and when it is allowed, along with the source of the traffic.
+
+
+(결과입력 8)
+gcloud compute security-policies describe denylist-siege | head -n 15
+
+

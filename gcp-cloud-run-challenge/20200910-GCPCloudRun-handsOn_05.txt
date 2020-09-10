@@ -1,0 +1,106 @@
+5) 핸즈온 - Cloud Run 기반 웹 애플리케이션 서버 구성
+
+*VM, 클러스터, 포드, 서비스 등을 생성하고 관리하는 모든 오버 헤드로 인해 웹 사이트를 운영하는 것은 어려울 수 있습니다. 이는 대규모 다중 계층(multi-tier) 애플리케이션에는 적합하지만 단순 웹 사이트를 배포하고 표시하려는 경우에는 많은 오버 헤드입니다.
+
+Google Cloud의 Google KNative 프레임워크 구현체인 Cloud Run을 사용하면 VM 또는 순수 Kubernetes 기반 배포에서 겪는 인프라 오버헤드 없이 웹 사이트를 관리하고 배포 할 수 있습니다. 이는 관리 관점에서보다 간단한 접근 방식 일뿐만 아니라 웹 사이트에 들어오는 요청이 없을 때 "scale to zero" 로 축소할 수 있는 기능도 제공합니다.
+
+Cloud Run은 컨테이너에 '서버리스' 개발을 제공하며 자체 Google Kubernetes Engine (GKE) 클러스터 또는 Cloud Run에서 제공하는 완전 관리 형 PaaS 솔루션에서 실행할 수 있습니다. 이 실습에서는 후자의 시나리오를 실행합니다.
+
+
+1. 애플리케이션에서 Docker 컨테이너 만들기
+2. Cloud Run에 컨테이너 배포
+3. 웹 사이트 수정
+4. 다운 타임 없는 새 버전 출시
+
+
+
+
+1. Architecture diagram
+
+*Cloud Shell에서 트리거되는 Cloud Build를 통해 생성 된 Docker 이미지로 시작한 다음 Cloud Shell의 명령에서 Cloud Run에 이미지를 배포합니다.
+
+What you'll learn
+How to build a Docker image using Cloud Build and upload it to gcr.io
+How to deploy Docker images to Cloud Run
+How to manage Cloud Run deployments
+How to setup an endpoint for an application on Cloud Run
+
+
+
+2. Clone Source Repository
+
+*여기서는 위에서 VM 기반으로 배포했던 애플리케이션을 동일하게 사용합니다. 소스를 복제해서 Docker 이미지를 만들면 Cloud Run에 바로 배포할 수 있습니다.
+
+cd ~/
+rm -rf monolith-to-microservices
+git clone https://github.com/googlecodelabs/monolith-to-microservices.git
+
+cd ~/monolith-to-microservices
+
+./setup.sh
+
+*Test your application by running the following command to start the web server:
+cd ~/monolith-to-microservices/monolith
+npm start
+
+
+
+3. Create Docker Container with Cloud Build
+*이제 소스 파일을 사용할 준비가 되었으므로 애플리케이션을 Dockerize 할 차례입니다!
+
+*일반적으로 Docker 컨테이너를 빌드하고 레지스트리로 푸시하여 GKE가 가져올 이미지를 저장하는 2 단계 접근 방식을 취해야 합니다. 삶을 더 쉽게 만들기 위해 Cloud Build를 사용하여 Docker 컨테이너를 빌드하고 단일 명령으로 Container Registry에 이미지를 저장하세요! Docker 파일을 만들고 푸시하는 수동 프로세스를 보려면 여기로 이동하십시오.
+https://cloud.google.com/container-registry/docs/quickstart
+
+
+gcloud services enable cloudbuild.googleapis.com
+
+cd ~/monolith-to-microservices/monolith
+gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/monolith:1.0.0 .
+
+
+*To view your build history, or watch the process in real time, in the Console, from the Navigation menu click Cloud Build > History. 
+*From the build details page you can view the container image that was created by clicking on the image name in the build information section.
+
+
+
+4. Deploy Container To Cloud Run
+
+*웹 사이트를 컨테이너화하고 컨테이너를 Container Registry에 푸시 했으므로 이제 Cloud Run에 배포 할 차례입니다.
+
+Cloud Run에 배포하는 방법에는 두 가지가 있습니다.
+
+Managed Cloud Run : 모든 컨테이너 수명주기가 Cloud Run 제품 자체에서 관리되는 Platform as a Service 모델입니다. 이 실습에서는 이 접근 방식을 사용하게됩니다.
+
+Cloud Run on GKE : GKE에서 자체 클러스터 및 포드(pod)를 가져올 수있는 추가 제어 계층이 있는 Cloud Run입니다. 여기에서 자세한 내용을 읽을 수 있습니다.
+https://cloud.google.com/run/docs/gke/setup
+
+
+gcloud services enable run.googleapis.com
+
+*After the API is enabled, run the following command to deploy your application:
+gcloud run deploy --image=gcr.io/${GOOGLE_CLOUD_PROJECT}/monolith:1.0.0 --platform managed 
+*Specify which region you'd like to run in. Type the number for the region closest to you. (2020/8/31일 현재 서울 리전에 Cloud Run이 제공되고 있지 당분간 가장 가까운 asia-northeast1 도쿄 리전을 사용해야 합니다)
+
+gcloud run services list --platform managed
+
+
+
+5. Create new revision with lower concurrency
+*애플리케이션을 다시 배포하되 이번에는 매개 변수 중 하나를 조정합니다.
+
+기본적으로 Cloud Run 애플리케이션의 동시성 값은 80입니다. 즉, 각 컨테이너 인스턴스는 한 번에 최대 80개의 요청을 처리합니다. 이것은 하나의 인스턴스가 한 번에 하나의 요청을 처리하는 Functions-as-a-Service 모델과 크게 다릅니다.
+
+동시성 값이 1 (테스트 용) 인 동일한 컨테이너 이미지를 다시 배포하고 어떤 일이 발생하는지 확인합니다.
+
+gcloud run deploy --image=gcr.io/${GOOGLE_CLOUD_PROJECT}/monolith:1.0.0 --platform managed --concurrency 1
+*On the Service Details page, click on the Revisions tab. You should now see 2 revisions created.
+*Click on the most recent deployment and review the details on the right hand side.
+
+
+gcloud run deploy --image=gcr.io/${GOOGLE_CLOUD_PROJECT}/monolith:1.0.0 --platform managed --concurrency 80
+
+
+
+(결과입력 5)
+gcloud run services describe monolith --platform managed --region asia-northeast1
+

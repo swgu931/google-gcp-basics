@@ -1,0 +1,201 @@
+
+2) 핸즈온 - Compute Engine 기반 웹 애플리케이션 서버 구성
+
+
+
+*다양한 기능, 기능, 제어 수준을 제공하는 각 솔루션을 사용하여 GCP 내에 웹 사이트를 배포하는 방법은 다양합니다. Compute Engine은 웹 사이트를 실행하는 데 사용되는 인프라를 심층적으로 제어 할 수 있지만 Google Kubernetes Engine (GKE), App Engine 등의 솔루션에 비해 운영 관리가 약간 더 필요합니다. Compute Engine을 사용하면 가상 머신, 부하 분산기 등을 포함한 인프라 측면을 세밀하게 제어 할 수 있습니다. 이 실습에서는 샘플 애플리케이션 인 'Fancy Store' 전자 상거래 웹 사이트를 배포하여 웹 사이트를 Compute Engine으로 쉽게 배포하고 확장 할 수있는 방법을 보여줍니다.
+
+What you'll learn
+How to create Compute Engine instances
+How to create instance templates from source instances
+How to create managed instance groups
+How to create and test managed instance group health checks
+How to create HTTP(S) Load Balancers
+How to create load balancer health checks
+How to use a Content Delivery Network (CDN) for Caching
+------------
+
+gcloud services enable compute.googleapis.com
+
+gsutil mb gs://fancy-store-$DEVSHELL_PROJECT_ID
+
+git clone https://github.com/googlecodelabs/monolith-to-microservices.git
+cd ~/monolith-to-microservices
+./setup.sh
+cd microservices
+npm start
+
+
+
+[Create GCE instances]
+Now it's time to start deploying some Compute Engine instances!
+
+The following steps you will:
+
+Create a startup script to configure instances.
+Clone source code and upload to Google Cloud Storage.
+Deploy a Compute Engine instance to host the backend microservices.
+Reconfigure the frontend code to utilize the backend microservices instance.
+Deploy a Compute Engine instance to host the frontend microservice.
+Configure the network to allow communication.
+
+
+1. create startup script
+
+cd ~/monolith-to-microservices
+vi startup-script.sh
+---
+#!/bin/bash
+
+
+
+# Install logging monitor. The monitor will automatically pick up logs sent to
+# syslog.
+curl -s "https://storage.googleapis.com/signals-agents/logging/google-fluentd-install.sh" | bash
+service google-fluentd restart &
+
+# Install dependencies from apt
+apt-get update
+apt-get install -yq ca-certificates git build-essential supervisor psmisc
+
+# Install nodejs
+mkdir /opt/nodejs
+curl https://nodejs.org/dist/v8.12.0/node-v8.12.0-linux-x64.tar.gz | tar xvzf - -C /opt/nodejs --strip-components=1
+ln -s /opt/nodejs/bin/node /usr/bin/node
+ln -s /opt/nodejs/bin/npm /usr/bin/npm
+
+# Get the application source code from the Google Cloud Storage bucket.
+mkdir /fancy-store
+gsutil -m cp -r gs://fancy-store-[DEVSHELL_PROJECT_ID]/monolith-to-microservices/microservices/* /fancy-store/
+
+# Install app dependencies.
+cd /fancy-store/
+npm install
+
+# Create a nodeapp user. The application will run as this user.
+useradd -m -d /home/nodeapp nodeapp
+chown -R nodeapp:nodeapp /opt/app
+
+# Configure supervisor to run the node app.
+cat >/etc/supervisor/conf.d/node-app.conf << EOF
+[program:nodeapp]
+directory=/fancy-store
+command=npm start
+autostart=true
+autorestart=true
+user=nodeapp
+environment=HOME="/home/nodeapp",USER="nodeapp",NODE_ENV="production"
+stdout_logfile=syslog
+stderr_logfile=syslog
+EOF
+
+supervisorctl reread
+supervisorctl update
+---
+
+
+gsutil cp ~/monolith-to-microservices/startup-script.sh gs://fancy-store-$DEVSHELL_PROJECT_ID
+
+* https://storage.googleapis.com/[BUCKET_NAME]/startup-script.sh to access
+
+
+2. Copy code into Cloud Storage bucket
+*When instances launch, they pull code from the Cloud Storage bucket, so you can store some configuration variables within the.env file of the code.
+
+cd ~
+rm -rf monolith-to-microservices/*/node_modules
+gsutil -m cp -r monolith-to-microservices   gs://fancy-store-$DEVSHELL_PROJECT_ID/
+
+*The node_modules dependencies directories are deleted to ensure the copy is as fast and efficient as possible. These are recreated on the instances when they start up.
+
+
+3. Deploy backend instance
+
+
+gcloud compute instances create backend \
+   --machine-type=n1-standard-1 \
+   --subnet subnet-seoul-192 \
+   --tags=backend \
+   --metadata=startup-script-url=https://storage.googleapis.com/fancy-store-$DEVSHELL_PROJECT_ID/startup-script.sh
+
+
+*Configure connection to backend
+gcloud compute instances list
+
+student_01_53bbe22a9ce5@cloudshell:~ (qwiklabs-gcp-01-958b54a4cd8a)$ gcloud compute instances list
+NAME     ZONE               MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
+backend  asia-northeast3-a  n1-standard-1               192.168.1.4  34.64.118.249  RUNNING
+
+
+In the .env file, replace localhost with your [BACKEND_ADDRESS]:
+---
+REACT_APP_ORDERS_URL=http://[BACKEND_ADDRESS]:8081/api/orders
+REACT_APP_PRODUCTS_URL=http://[BACKEND_ADDRESS]:8082/api/products
+---
+
+
+cd ~/monolith-to-microservices/react-app
+npm install && npm run-script build
+
+cd ~
+rm -rf monolith-to-microservices/*/node_modules
+
+gsutil -m cp -r monolith-to-microservices gs://fancy-store-$DEVSHELL_PROJECT_ID/
+
+
+4. Deploy frontend instance =============
+
+
+gcloud compute instances create frontend \
+   --machine-type=n1-standard-1 \
+   --subnet subnet-seoul-192 \
+   --tags=frontend \
+    --metadata=startup-script-url=https://storage.googleapis.com/fancy-store-$DEVSHELL_PROJECT_ID/startup-script.sh 
+
+
+* The deployment command and startup script is used with both the frontend and backend instances for simplicity, and because the code is configured to launch all microservices by default. As a result, all microservices run on both the frontend and backend in this sample. In a production environment you'd only run the microservices you need on each component.
+
+
+
+
+
+
+5. Configure Network
+
+gcloud compute firewall-rules create fw-fe \
+    --allow tcp:8080 \
+    --network custom-network1 \
+    --target-tags=frontend
+
+gcloud compute firewall-rules create fw-be \
+    --allow tcp:8081-8082 \
+    --network custom-network1 \
+    --target-tags=backend
+
+
+gcloud compute firewall-rules create ssh \
+    --allow tcp:22 \
+    --network custom-network1
+
+*In order to navigate to the external IP of the frontend, you need to know the address. Run the following and look for the EXTERNAL_IP of the frontend instance:
+
+gcloud compute instances list
+
+student_01_53bbe22a9ce5@cloudshell:~ (qwiklabs-gcp-01-958b54a4cd8a)$ gcloud compute instances list
+NAME      ZONE               MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
+backend   asia-northeast3-a  n1-standard-1               192.168.1.4  34.64.118.249  RUNNING
+frontend  asia-northeast3-a  n1-standard-1               192.168.1.5  34.64.149.78   RUNNING
+
+
+
+watch -n 2 curl http://[FRONTEND_ADDRESS]:8080
+watch -n 2 curl http://34.64.149.78:8080
+
+ (결과 입력)
+curl http://34.64.149.78:8080 
+
+
+
+
+
+

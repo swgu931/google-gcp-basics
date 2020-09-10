@@ -1,0 +1,85 @@
+qwiklab : https://ce.qwiklabs.com/classrooms/4324/labs/37414
+
+
+
+답변 사이트 : https://docs.google.com/forms/d/e/1FAIpQLSewdnFGhNEKLYWLuPuEVHTwtie7-GJs4jUgCAkC55niAZ97Lw/formResponse
+
+for GCP access 
+
+username : student-01-53bbe22a9ce5@qwiklabs.net
+passwd: X79gvVjNf
+project id : qwiklabs-gcp-01-958b54a4cd8a
+
+
+gcloud auth login
+gcloud config get-value project
+gcloud config set project qwiklabs-gcp-01-958b54a4cd8a
+PROJECT_ID=$(gcloud config list project --format "value(core.project)")
+gcloud config set compute/zone asia-northeast3-a  
+gcloud config set compute/region asia-northeast3
+gcloud config get-value compute/zone
+
+
+gcloud config set account `ACCOUNT`   ?????
+
+
+
+1) 핸즈온 - VPC 네트워크 구성하기
+
+gcloud compute networks list
+gcloud compute networks subnets list
+
+gcloud compute instances create instance-1 --zone asia-northeast3-b
+
+gcloud compute instances create instance-2 --zone asia-northeast1-c
+
+
+gcloud compute instances list
+
+gcloud compute networks create custom-network1 --subnet-mode custom
+
+gcloud compute networks subnets create subnet-seoul-192 \
+      --network custom-network1 \
+      --region asia-northeast3 \
+      --range 192.168.1.0/24
+
+gcloud compute networks subnets create subnet-tokyo-192 \
+      --network custom-network1 \
+      --region asia-northeast1 \
+      --range 192.168.5.0/24
+
+gcloud compute networks subnets list
+
+gcloud compute instances create instance-3 \
+      --zone asia-northeast3-a \
+      --subnet subnet-seoul-192
+
+gcloud compute instances create instance-4 \
+      --zone asia-northeast1-c \
+      --subnet subnet-tokyo-192
+
+
+(결과입력 1)
+>> gcloud compute networks subnets list | grep asia-northeast && gcloud compute instances list 
+
+student_01_53bbe22a9ce5@cloudshell:~ (qwiklabs-gcp-01-958b54a4cd8a)$ gcloud compute networks subnets list | grep asia-northeast && gcloud compute instances list
+default           asia-northeast1          default          10.146.0.0/20
+subnet-tokyo-192  asia-northeast1          custom-network1  192.168.5.0/24
+default           asia-northeast2          default          10.174.0.0/20
+default           asia-northeast3          default          10.178.0.0/20
+subnet-seoul-192  asia-northeast3          custom-network1  192.168.1.0/24
+NAME        ZONE               MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP     STATUS
+instance-2  asia-northeast1-c  n1-standard-1               10.146.0.2   35.189.134.168  RUNNING
+instance-4  asia-northeast1-c  n1-standard-1               192.168.5.2  34.84.3.164     RUNNING
+instance-3  asia-northeast3-a  n1-standard-1               192.168.1.2  34.64.149.78    RUNNING
+instance-1  asia-northeast3-b  n1-standard-1               10.178.0.2   34.64.118.249   RUNNING
+
+
+*Isolating subnetworks
+자동 지역 네트워크에서 네트워크 내의 모든 가상 머신 인스턴스는 서로 다른 지역 네트워크 간의 통신을 열기 위한 방화벽 규칙을 자동으로 생성했기 때문에 서로 통신 할 수 있습니다. 하지만 커스텀 하위 네트워크에는 기본 방화벽 규칙이 없으므로 한 커스텀 하위 네트워크의 인스턴스가 다른 커스텀 하위 네트워크의 인스턴스에 연결할 수 없습니다.
+
+하위 네트워크 간 통신을 허용하려면 방화벽 규칙을 만들어야합니다. 이 실습에서는 이 작업을 수행 할 시간이 없습니다. 그러나 Subnetwork documentation 문서에서 이 고급 주제에 대해 자세히 알아볼 수 있습니다.
+https://cloud.google.com/vpc/docs/vpc#subnetworks_and_firewall_rules
+
+
+

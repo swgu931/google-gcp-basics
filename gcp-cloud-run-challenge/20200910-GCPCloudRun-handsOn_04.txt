@@ -1,0 +1,128 @@
+4) Update the website
+
+1.Make changes to the website
+*시나리오 : 마케팅 팀이 사이트의 홈페이지 변경을 요청했습니다. 그들은 당신의 회사가 누구이고 당신이 실제로 무엇을 판매하는지에 대해 더 많은 정보를 제공해야 한다고 생각합니다.
+
+작업 : 홈페이지에 텍스트를 추가하여 마케팅 팀을 행복하게 만드세요! 개발자 중 한 명이 이미 index.js.new라는 파일 이름으로 변경 사항을 만든 것 같습니다. 이 파일을 index.js에 복사하면 변경 사항이 반영됩니다. 아래 지침에 따라 적절하게 변경하십시오.
+
+*Run the following commands to copy the updated file to the correct file name:
+
+cd ~/monolith-to-microservices/react-app/src/pages/Home
+mv index.js.new index.js
+
+cat ~/monolith-to-microservices/react-app/src/pages/Home/index.js
+
+---
+/*
+Copyright 2019 Google LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  paper: {
+    width: "800px",
+    margin: "0 auto",
+    padding: theme.spacing(3, 2)
+  }
+}));
+export default function Home() {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <Paper className={classes.paper}>
+        <Typography variant="h5">
+          Fancy Fashion &amp; Style Online
+        </Typography>
+        <br />
+        <Typography variant="body1">
+          Tired of mainstream fashion ideas, popular trends and societal norms?
+          This line of lifestyle products will help you catch up with the Fancy trend and express your personal style.
+          Start shopping Fancy items now!
+        </Typography>
+      </Paper>
+    </div>
+  );
+}
+----
+
+
+cd ~/monolith-to-microservices/react-app
+npm install && npm run-script build
+
+cd ~
+rm -rf monolith-to-microservices/*/node_modules
+gsutil -m cp -r monolith-to-microservices gs://fancy-store-$DEVSHELL_PROJECT_ID/
+
+
+
+2. Push changes with rolling replacements
+
+gcloud compute instance-groups managed rolling-action replace fancy-fe-mig \
+    --max-unavailable=100%
+
+watch -n 2 gcloud compute instance-groups list-instances fancy-fe-mig
+*Once items appear in the list, exit the watch command by pressing Ctrl+C.
+
+*Run the following to confirm the service is listed as HEALTHY:
+watch -n 2 gcloud compute backend-services get-health fancy-fe-frontend --global
+*Wait a few moments for both services to appear and become HEALTHY.
+*Once items appear in the list, exit the watch command by pressing Ctrl+C.
+
+*Browse to the website via http://[LB_IP] where [LB_IP] is the IP_ADDRESS specified for the Load Balancer, which can be found with the following command:
+*gcloud compute forwarding-rules list --global
+
+
+3. Simulate Failure
+
+*In order to confirm the health check works, log in to an instance and stop the services.
+
+gcloud compute instance-groups list-instances fancy-fe-mig
+gcloud compute ssh [INSTANCE_NAME]
+
+*Within the instance, use supervisorctl to stop the application:
+sudo supervisorctl stop nodeapp; sudo killall node
+
+exit
+
+
+*Monitor the repair operations:
+watch -n 2 gcloud compute operations list \
+--filter='operationType~compute.instances.repair.*'
+*This will take a few minutes to complete.
+
+NAME                                                  TYPE                                       TARGET                                 HTTP_STATUS  STATUS  TIMESTAMP
+repair-1568314034627-5925f90ee238d-fe645bf0-7becce15  compute.instances.repair.recreateInstance  us-central1-a/instances/fancy-fe-1vqq  200          DONE    2019-09-12T11:47:14.627-07:00
+
+
+(결과입력 4)
+gcloud compute forwarding-rules list --global
+
+NAME             REGION  IP_ADDRESS     IP_PROTOCOL  TARGET
+fancy-http-rule          34.107.238.17  TCP          fancy-proxy
+
+위에서 나온 IP_ADDRESS를 이용하여
+
+curl [IP_ADDRESS]
+
+
+
+
+

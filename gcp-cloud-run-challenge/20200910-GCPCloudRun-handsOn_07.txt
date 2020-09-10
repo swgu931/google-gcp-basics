@@ -1,0 +1,134 @@
+7) 핸즈온 - Cloud SQL 서버 구성하기
+
+1. Enable the Cloud SQL API
+
+*In the Products & services menu on the left, click on APIs and Services > Library.
+
+여러 개의 결과가 보일 것입니다. Cloud SQL과 Cloud SQL Admin API를 클릭해서 들어가 API Enabled 상태인지 확인하고, 아니면 Enable 버튼 클릭합니다.
+
+
+2. Create a Cloud SQL instance
+
+
+3. Connect to your instance using the mysql client in the Cloud Shell
+
+gcloud sql connect myinstance --user=root
+
+*You should now see the mysql prompt.
+
+
+4. Create a database and upload data
+
+create database fancy;
+
+*Insert sample data into the database:
+---
+use fancy;
+
+create table products (
+    id varchar(100),
+    name varchar(100),
+    description varchar(100),
+    picture varchar(100),
+    cost varchar(100),
+    categories varchar(100)
+);
+
+INSERT INTO products VALUES("OLJCESPC7Z", "MS -  Vintage Typewriter", "This typewriter looks good in your living room.", "static/img/products/typewriter.jpg", "67.99", "vintage");
+INSERT INTO products VALUES("66VCHSJNUP", "MS -  Vintage Camera Lens", "You won't have a camera to use it and it probably doesn't work anyway.", "static/img/products/camera-lens.jpg", "12.49", "photography");
+INSERT INTO products VALUES("1YMWWN1N4O", "MS -  Home Barista Kit", "Always wanted to brew coffee with Chemex and Aeropress at home?", "static/img/products/barista-kit.jpg", "124", "cookware");
+INSERT INTO products VALUES("L9ECAV7KIM", "MS -  Terrarium", "This terrarium will looks great in your white painted living room.", "static/img/products/terrarium.jpg", "36.45", "gardening");
+INSERT INTO products VALUES("2ZYFJ3GM2N", "MS -  Film Camera", "This camera looks like it's a film camera, but it's actually digital.", "static/img/products/film-camera.jpg", "2245", "photography");
+INSERT INTO products VALUES("0PUK6V6EV0", "MS -  Vintage Record Player", "It still works.", "static/img/products/record-player.jpg", "65.5", "music");
+INSERT INTO products VALUES("LS4PSXUNUM", "MS -  Metal Camping Mug", "You probably don't go camping that often but this is better than plastic cups.", "static/img/products/camp-mug.jpg", "24.33", "cookware");
+INSERT INTO products VALUES("9SIQT8TOJO", "MS -  City Bike", "This single gear bike probably cannot climb the hills of San Francisco.", "static/img/products/city-bike.jpg", "789.5", "cycling");
+INSERT INTO products VALUES("6E92ZMYYFZ", "MS -  Air Plant", "Have you ever wondered whether air plants need water? Buy one and figure out.", "static/img/products/air-plant.jpg", "12.3", "gardening");
+---
+
+SELECT * FROM products;
+
+*GCP 상에 MySQL 인스턴스를 만들었으므로 이제는 Cloud Run 어플리케이션에서 DB에 저장된 데이터를 읽어 오도록 변경해 보겠습니다. 참고로 현재의 monolith-to-microservices 애플리케이션은 JSON 파일에 저장된 데이터를 읽어 오는 구조입니다.
+
+cd ~/monolith-to-microservices/monolith
+vi package.json
+
+다음과 같이 depedencies에서 mysql 모듈을 추가
+
+ "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"        // adding this
+  }
+
+
+cd ~/monolith-to-microservices/monolith/src
+vi server.js
+
+아래와 같이 const products 아래에 mysql 연결을 추가. PUBLIC_IP와 ROOT_PASSWORD는 인스턴스 생성 과정에 있음
+
+//Load orders and products for pseudo database
+const orders = require("../data/orders.json").orders;
+const products = require("../data/products.json").products;
+
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+  host     : 'PUBLIC_IP',
+  user     : 'root',
+  password : 'ROOT_PASSWORD',
+  database : 'fancy'
+});
+
+아래와 같이 JSON 파일에서 읽어오던 데이터를 MySQL DB에서 읽도록 수정
+
+//Get all products
+//app.get("/service/products", (req, res) => res.json(products));
+app.get("/service/products", (req, res) => {
+    connection.query('SELECT * from products', (error, rows) => {
+      if (error) throw error;
+      console.log('ahniverson info is: ', rows);
+      res.json(rows)
+    });
+  }
+);
+
+
+
+*Cloud Run에서 MySQL에 접속하기 위해서는 몇 가지 방법이 제공됩니다. 첫 번째는 Public IP를 사용하는 방법으로 Proxy를 통해 연결하면 Secure한 방법으로 접속이 가능합니다. 두 번째 방법은 Private IP를 사용하는 방법으로 Serverless VPC Access 기능을 활용합니다. 자세한 내용은 Connecting from Cloud Run (fully managed) to Cloud SQL를 참고하시기 바랍니다.
+https://cloud.google.com/sql/docs/mysql/connect-run
+
+*여기서는 Public IP를 이용한 방법을 사용하되 Proxy는 제외하고 임시로 전체 IP를 열어 접속하는 방식을 사용하겠습니다. Proxy를 사용하는 방식이 궁금하시면 아래 Qwiklabs를 보시기 바랍니다.
+
+콘솔의 메뉴에서 SQL을 선택하고 myinstance를 선택한 후, Connections로 들어갑니다.
+
+Public IP를 체크하고 Authorized networks에서 Add network를 눌러 다음과 같이 접속 가능한 IP를 0.0.0.0/0으로 지정합니다. (주의: 실제 프러덕션 상황에서는 0.0.0.0/0을 허용하는 것은 권고되지 않습니다.)
+
+*이제 모든 준비가 되었으므로 소스를 다시 빌드하여 배포를 해 보겠습니다.
+cd ~/monolith-to-microservices/react-app
+npm run build:monolith
+
+cd ~/monolith-to-microservices/monolith
+gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/monolith:3.0.0 .
+
+gcloud run deploy --image=gcr.io/${GOOGLE_CLOUD_PROJECT}/monolith:3.0.0 --platform managed
+
+*Fancy Cloud Run 애플리케이션의 URL을 눌러 결과를 확인합니다.
+
+*실제 DB 데이터를 변경하여 데이터가 변경되는지 확인해 보겠습니다.
+
+gcloud sql connect myinstance --user=root
+
+use fancy;
+
+update products set name = 'MS - Old typewriter', cost='33.33' where id='OLJCESPC7Z';
+
+*다음과 같이 이름과 가격이 변경되었습니다.
+
+
+(결과입력 7)
+curl [CLOUD_RUN_URL]/service/products
+
+
+
+
+Connect to Cloud SQL from an Application in Kubernetes Engine
+
