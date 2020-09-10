@@ -28,3 +28,8 @@ gcloud container images list-tags asia.gcr.io/test-project/nginx
 
 - docker pull [HOSTNAME]/[PROJECT-ID]/[IMAGE]:[TAG]
 - docker pull [HOSTNAME]/[PROJECT-ID]/[IMAGE]@[IMAGE_DIGEST]
+
+- container images list
+```
+gcloud container images list --repository=asia.gcr.io/[project_id]
+```
