@@ -2,6 +2,9 @@
 
  - ref : 도커/쿠버네티스를 활용한 컨테이너 개발 실전 입문
  - All source used in this folder come from the ref.
+ - gcloud : https://cloud.google.com/sdk/gcloud/reference 
+ - gsutil : https://cloud.google.com/storage/docs/gsutil/
+
 
 ## Using docker google/cloud-sdk not to install google cloud sdk                          
 ```
