@@ -28,9 +28,3 @@ Cloud SQL
 
 Cloud Armor
 
-
-
-
-
-
-## Google Cloud Infrastructure (Compute, Network)
