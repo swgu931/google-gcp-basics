@@ -78,7 +78,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubetm/kubetm.github.io/maste
 kubectl proxy --port=8001
 ```
 
-6. access to http://127.0.0.1:8002/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default
+6. access to http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default
 
 
 
