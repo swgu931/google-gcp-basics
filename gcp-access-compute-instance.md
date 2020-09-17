@@ -19,6 +19,7 @@ gcloud config get-value compute/zone
 gcloud compute instances create gcp-cloud-test --source-snapshot=https://compute.googleapis.com/compute/v1/projects/$PROJECT_ID/global/snapshots/snapshot-cloud \
 --zone=asia-northeast3-a --machine-type=n1-standard-1 --preemptible --tags=socket-test,socket-test-send 
 ```
+- ref:
 ```
 
 gcloud beta compute --project=$PROJECT_ID instances create-with-container cloud-nav2 \
