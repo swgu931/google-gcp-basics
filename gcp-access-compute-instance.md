@@ -1,5 +1,7 @@
 # gcp access compute instance howto
 
+- ref: https://cloud.google.com/sdk/gcloud/reference/compute/instances/
+
 ## Prerequisite
 - Install google cloud sdk & create google account
 
@@ -56,7 +58,13 @@ gcloud compute firewall-rules create --network=NETWORK default-allow-ssh --allow
 ## login to compute instance via ssh
 
 ```
-gcloud compute ssh [username]@gcp-cloud-test --zone=asia-northeast3-a
+gcloud compute ssh --zone=asia-northeast3-a gcp-cloud-test
+```
+
+or
+
+```
+gcloud compute ssh --zone=asia-northeast3-a <username>@gcp-cloud-test 
 ```
 
 ## stop/start/delete
