@@ -19,6 +19,16 @@ gcloud config get-value compute/zone
 gcloud compute instances create gcp-cloud-test --source-snapshot=https://compute.googleapis.com/compute/v1/projects/$PROJECT_ID/global/snapshots/snapshot-cloud \
 --zone=asia-northeast3-a --machine-type=n1-standard-1 --preemptible --tags=socket-test,socket-test-send 
 ```
+
+or
+```
+gcloud compute images list
+```
+
+```
+gcloud compute instances create gcp-cloud-python --image=ubuntu-1804-bionic-v20201211a \
+--zone=asia-northeast3-a --machine-type=n1-standard-1 
+```
 - ref:
 ```
 
