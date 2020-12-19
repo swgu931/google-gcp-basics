@@ -26,8 +26,11 @@ gcloud compute images list
 ```
 
 ```
-gcloud compute instances create gcp-cloud-python --image=ubuntu-1804-bionic-v20201211a \
---zone=asia-northeast3-a --machine-type=n1-standard-1 
+gcloud compute instances create gcp-instance-python \
+--image-project=ubuntu-os-cloud \
+--image=ubuntu-1804-bionic-v20201211a \
+--zone=asia-northeast3-a \
+--machine-type=n1-standard-1 
 ```
 - ref:
 ```
