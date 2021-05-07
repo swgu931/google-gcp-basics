@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloud-nav2-balancer  # <- cloud-nav2-lb
+  labels:
+    app: cloud-nav2-balancer  # <- cloud-nav2-lb
+    stage: pre-check
+spec:
+  type: LoadBalancer
+  selector:
+    app: cloud-nav2
+  ports:
+  - port: 5000
+    targetPort: 5000
+    name: lb-socket-test
+  - port: 25567
+    targetPort: 25567
+    name: lb-p1
+  - port: 25568
+    targetPort: 25568
+    name: lb-p2
+  - port: 25569
+    targetPort: 25569
+    name: lb-p3
+  - port: 25570
+    targetPort: 25570
+    name: lb-p4        

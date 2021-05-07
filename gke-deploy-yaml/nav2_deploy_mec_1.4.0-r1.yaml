@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-nav2
+  labels:
+    app: cloud-nav2
+    stage: pre-check
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        app: cloud-nav2
+  template:
+    metadata:
+      labels:
+        app: cloud-nav2
+        name: navigation2
+        provider: sewan.gu
+        location: swever-cloud    
+    spec:
+      containers:
+      - name: navigation2 
+        image: robot.ainize.ai/cloud-nav2:1.4.0-r5
+        env:
+        - name: ROS_DOMAIN_ID
+          value: "70"
+        - name: ROBOT_NAME
+          value: "cloi"
+        workingDir: /opt/nav2_ws
+      #  command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
+        args: ["/opt/nav2_ws/01.run_cloud_nav2.sh"] 
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+          name: container-s
+        - containerPort: 25567
+          name: container-p1
+        - containerPort: 25568
+          name: container-p2
+        - containerPort: 25569
+          name: container-p3
+        - containerPort: 25570
+          name: container-p4 
+      imagePullSecrets:
+      - name: ainize
+      hostNetwork: false
+      hostname: navigation2
