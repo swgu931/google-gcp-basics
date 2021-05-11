@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#PROJECT_ID=lg-cloud-robot-20200908
-PROJECT_ID=lg-cloud-robot-20200731
-#gcloud config set project lg-cloud-robot-20200731     # project in accountn@googlemail.com
 gcloud config set project ${PROJECT_ID}     # project in accountn@googlemail.com
 gcloud config set compute/zone asia-northeast3-a   # Seoul region
 

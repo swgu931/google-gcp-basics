@@ -1,16 +1,16 @@
 #!/bin/bash
 
-gcloud config set project lg-cloud-robot-20200731     # project in accountn@googlemail.com
+gcloud config set project ${PROJECT_ID}     # project in accountn@googlemail.com
 gcloud config set compute/zone asia-northeast3   # Seoul region
 
-gcloud container clusters create cloud-nav2-high --project=lg-cloud-robot-20200731 --cluster-version=1.15.12-gke.2 \
+gcloud container clusters create cloud-nav2-high --project=${PROJECT_ID} --cluster-version=1.15.12-gke.2 \
 --machine-type=n1-highcpu-8 \
 --num-nodes=1 \
 --subnetwork=default
 
 gcloud container clusters get-credentials cloud-nav2-high
 
-gcloud compute project-info describe --project lg-cloud-robot-20200731
+gcloud compute project-info describe --project ${PROJECT_ID}
 gcloud container clusters describe cloud-nav2-high
 kubectl get nodes  
 

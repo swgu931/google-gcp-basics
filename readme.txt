@@ -21,17 +21,17 @@ gcloud compute instances list
 
 # project create 
 
-gcloud projects create lg-cloud-robot-20200731 --set-as-default
+gcloud projects create ${PROJECT_ID} --set-as-default
   : not working well so access to web site and create in the site. 
 
 
 # GKE cluster create
 
-gcloud config set project lg-cloud-robot-20200731     # GCRP-test-prject in lggusewan@googlemail.com
+gcloud config set project ${PROJECT_ID}     # GCRP-test-prject in lggusewan@googlemail.com
 gcloud config set compute/zone asia-northeast3   # Seoul region
 
 
-gcloud container clusters create swever-cloud --project=lg-cloud-robot-20200731 --cluster-version=1.15.12-gke.2 \
+gcloud container clusters create swever-cloud --project=${PROJECT_ID} --cluster-version=1.15.12-gke.2 \
 --machine-type=n1-standard-1 \
 --num-nodes=3 \
 --subnetwork=default
@@ -51,7 +51,7 @@ gcloud projects delete second-base-252206
 
 ==> quota 문제로 에러 발생
 ```
-gcloud compute project-info describe --project lg-cloud-robot-20200731
+gcloud compute project-info describe --project ${PROJECT_ID}
 ```
 *cpus, In-use IP addresses 의  quota 조정
 

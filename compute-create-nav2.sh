@@ -1,5 +1,5 @@
 
-gcloud beta compute --project=lg-cloud-robot-20200731 instances create-with-container cloud-nav2 \
+gcloud beta compute --project=${PROJECT_ID} instances create-with-container cloud-nav2 \
 --zone=asia-northeast3-a --machine-type=n1-standard-1 --subnet=default --network-tier=PREMIUM \ 
 --metadata=google-logging-enabled=true --maintenance-policy=MIGRATE \
 --service-account=60051663133-compute@developer.gserviceaccount.com \

@@ -1,14 +1,14 @@
 #!/bin/bash
 
-gcloud config set project lg-cloud-test-20200806     # project in accountn@googlemail.com
+gcloud config set project ${PROJECT_ID}      # project in accountn@googlemail.com
 gcloud config set compute/zone asia-northeast3   # Seoul region
 
-gcloud container clusters create cloud-test --project=lg-cloud-test-20200806 --cluster-version=1.15.12-gke.2 \
+gcloud container clusters create cloud-test --project=${PROJECT_ID}  --cluster-version=1.15.12-gke.2 \
 --machine-type=n1-standard-1 \
 --num-nodes=1 \
 --subnetwork=default
 
-gcloud compute project-info describe --project lg-cloud-test-20200806
+gcloud compute project-info describe --project ${PROJECT_ID} 
 
 gcloud container clusters describe cloud-test
 
