@@ -10,7 +10,7 @@
 ```
 gcloud auth login
 gcloud config get-value project
-gcloud config set project lg-cloud-robot-20200731
+gcloud config set project ${PROJECT_ID}
 PROJECT_ID=$(gcloud config list project --format "value(core.project)")
 gcloud config set compute/zone asia-northeast3  
 gcloud config get-value compute/zone

@@ -2,7 +2,7 @@
 
 1. GKE cluster create
 ```
-gcloud container clusters create swever-cloud --project=project-cloud-test --cluster-version=1.15.12-gke.2 \
+gcloud container clusters create swever-cloud --project=${PROJECT_ID} --cluster-version=1.15.12-gke.2 \
 --machine-type=n1-standard-1 \
 --num-nodes=1 \
 --subnetwork=default
@@ -15,7 +15,7 @@ gcloud container clusters create swever-cloud --project=project-cloud-test --clu
 
 
 ```
-gcloud compute project-info describe --project project-cloud-test
+gcloud compute project-info describe --project ${PROJECT_ID}
 ```
 ```
 gcloud container clusters describe swever-cloud
@@ -57,7 +57,7 @@ kubectl proxy --port=8001
 
 ```
 gcloud auth login
-gcloud config set project project-cloud-test     # project in accountn@googlemail.com
+gcloud config set project ${PROJECT_ID}     # project in accountn@googlemail.com
 gcloud config set compute/zone asia-northeast3   # Seoul region
 gcloud container clusters get-credentials swever-cloud
 kubectl get nodes  
@@ -65,9 +65,9 @@ kubectl get nodes
 
 ### to delete projects after finishing project
 ```
-gcloud endpoints services delete map.endpoints.project-cloud-test.cloud.goog --project=project-cloud-test
-gcloud endpoints services delete www.endpoints.project-cloud-test.cloud.goog --project=project-cloud-test
-gcloud projects delete project-cloud-test
+gcloud endpoints services delete map.endpoints.${PROJECT_ID}.cloud.goog --project=${PROJECT_ID}
+gcloud endpoints services delete www.endpoints.${PROJECT_ID}.cloud.goog --project=${PROJECT_ID}
+gcloud projects delete ${PROJECT_ID}
  You can undo this operation for a limited period by running the command below.
-     $ gcloud projects undelete project-cloud-test
+     $ gcloud projects undelete ${PROJECT_ID}
 ```
