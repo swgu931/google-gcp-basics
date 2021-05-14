@@ -1,0 +1,488 @@
+[0.528s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/sewan.gu/second/workspace-cloud/google-gcp-basics']
+[0.528s] DEBUG:colcon:Parsed command line arguments: Namespace(base_paths=['/home/sewan.gu/second/workspace-cloud/google-gcp-basics'], build_base='build', ignore_user_meta=False, log_base=None, log_level=None, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7f57067c79e8>>, metas=['./colcon.meta'], names_only=False, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, paths=None, paths_only=True, topological_graph=False, topological_graph_density=False, topological_graph_dot=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, topological_graph_legend=False, topological_order=False, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7f57067c79e8>, verb_name='list', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f570630c048>)
+[0.552s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.553s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.553s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.553s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.553s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.553s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/sewan.gu/second/workspace-cloud/google-gcp-basics'
+[0.554s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extensions ['ignore', 'ignore_ament_install']
+[0.554s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extension 'ignore'
+[0.554s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extension 'ignore_ament_install'
+[0.554s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extensions ['colcon_pkg']
+[0.554s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extension 'colcon_pkg'
+[0.554s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extensions ['colcon_meta']
+[0.554s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extension 'colcon_meta'
+[0.554s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extensions ['ros']
+[0.554s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extension 'ros'
+[0.569s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extensions ['cmake', 'python']
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extension 'cmake'
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extension 'python'
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extensions ['python_setup_py']
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics) by extension 'python_setup_py'
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extensions ['ignore', 'ignore_ament_install']
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extension 'ignore'
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extension 'ignore_ament_install'
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extensions ['colcon_pkg']
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extension 'colcon_pkg'
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extensions ['colcon_meta']
+[0.571s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extension 'colcon_meta'
+[0.571s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extensions ['ros']
+[0.571s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extension 'ros'
+[0.571s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extensions ['cmake', 'python']
+[0.571s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extension 'cmake'
+[0.571s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extension 'python'
+[0.571s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extensions ['python_setup_py']
+[0.571s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06) by extension 'python_setup_py'
+[0.571s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extensions ['ignore', 'ignore_ament_install']
+[0.571s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extension 'ignore'
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extension 'ignore_ament_install'
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extensions ['colcon_pkg']
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extension 'colcon_pkg'
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extensions ['colcon_meta']
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extension 'colcon_meta'
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extensions ['ros']
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extension 'ros'
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extensions ['cmake', 'python']
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extension 'cmake'
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extension 'python'
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extensions ['python_setup_py']
+[0.572s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi) by extension 'python_setup_py'
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extensions ['ignore', 'ignore_ament_install']
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extension 'ignore'
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extension 'ignore_ament_install'
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extensions ['colcon_pkg']
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extension 'colcon_pkg'
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extensions ['colcon_meta']
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extension 'colcon_meta'
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extensions ['ros']
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extension 'ros'
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extensions ['cmake', 'python']
+[0.573s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extension 'cmake'
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extension 'python'
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extensions ['python_setup_py']
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoapi/cmd) by extension 'python_setup_py'
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extensions ['ignore', 'ignore_ament_install']
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extension 'ignore'
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extension 'ignore_ament_install'
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extensions ['colcon_pkg']
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extension 'colcon_pkg'
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extensions ['colcon_meta']
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extension 'colcon_meta'
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extensions ['ros']
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extension 'ros'
+[0.575s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extensions ['cmake', 'python']
+[0.575s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extension 'cmake'
+[0.575s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extension 'python'
+[0.575s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extensions ['python_setup_py']
+[0.575s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb) by extension 'python_setup_py'
+[0.575s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extensions ['ignore', 'ignore_ament_install']
+[0.575s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extension 'ignore'
+[0.575s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extension 'ignore_ament_install'
+[0.575s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extensions ['colcon_pkg']
+[0.575s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extension 'colcon_pkg'
+[0.576s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extensions ['colcon_meta']
+[0.576s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extension 'colcon_meta'
+[0.576s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extensions ['ros']
+[0.576s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extension 'ros'
+[0.576s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extensions ['cmake', 'python']
+[0.576s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extension 'cmake'
+[0.576s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extension 'python'
+[0.576s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extensions ['python_setup_py']
+[0.576s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc) by extension 'python_setup_py'
+[0.576s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extensions ['ignore', 'ignore_ament_install']
+[0.576s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extension 'ignore'
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extension 'ignore_ament_install'
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extensions ['colcon_pkg']
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extension 'colcon_pkg'
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extensions ['colcon_meta']
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extension 'colcon_meta'
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extensions ['ros']
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extension 'ros'
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extensions ['cmake', 'python']
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extension 'cmake'
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extension 'python'
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extensions ['python_setup_py']
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql) by extension 'python_setup_py'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extensions ['ignore', 'ignore_ament_install']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extension 'ignore'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extension 'ignore_ament_install'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extensions ['colcon_pkg']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extension 'colcon_pkg'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extensions ['colcon_meta']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extension 'colcon_meta'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extensions ['ros']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extension 'ros'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extensions ['cmake', 'python']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extension 'cmake'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extension 'python'
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extensions ['python_setup_py']
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/conf.d) by extension 'python_setup_py'
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extensions ['ignore', 'ignore_ament_install']
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extension 'ignore'
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extension 'ignore_ament_install'
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extensions ['colcon_pkg']
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extension 'colcon_pkg'
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extensions ['colcon_meta']
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extension 'colcon_meta'
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extensions ['ros']
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extension 'ros'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extensions ['cmake', 'python']
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extension 'cmake'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extension 'python'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extensions ['python_setup_py']
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/etc/mysql/mysql.conf.d) by extension 'python_setup_py'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extensions ['ignore', 'ignore_ament_install']
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extension 'ignore'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extension 'ignore_ament_install'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extensions ['colcon_pkg']
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extension 'colcon_pkg'
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extensions ['colcon_meta']
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extension 'colcon_meta'
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extensions ['ros']
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extension 'ros'
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extensions ['cmake', 'python']
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extension 'cmake'
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extension 'python'
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extensions ['python_setup_py']
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/tododb/sql) by extension 'python_setup_py'
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extensions ['ignore', 'ignore_ament_install']
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extension 'ignore'
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extension 'ignore_ament_install'
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extensions ['colcon_pkg']
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extension 'colcon_pkg'
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extensions ['colcon_meta']
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extension 'colcon_meta'
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extensions ['ros']
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extension 'ros'
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extensions ['cmake', 'python']
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extension 'cmake'
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extension 'python'
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extensions ['python_setup_py']
+[0.582s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx) by extension 'python_setup_py'
+[0.583s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extensions ['ignore', 'ignore_ament_install']
+[0.583s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extension 'ignore'
+[0.583s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extension 'ignore_ament_install'
+[0.583s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extensions ['colcon_pkg']
+[0.583s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extension 'colcon_pkg'
+[0.583s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extensions ['colcon_meta']
+[0.583s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extension 'colcon_meta'
+[0.583s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extensions ['ros']
+[0.583s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extension 'ros'
+[0.583s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extensions ['cmake', 'python']
+[0.584s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extension 'cmake'
+[0.584s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extension 'python'
+[0.584s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extensions ['python_setup_py']
+[0.584s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc) by extension 'python_setup_py'
+[0.584s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extensions ['ignore', 'ignore_ament_install']
+[0.584s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extension 'ignore'
+[0.584s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extension 'ignore_ament_install'
+[0.584s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extensions ['colcon_pkg']
+[0.584s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extension 'colcon_pkg'
+[0.584s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extensions ['colcon_meta']
+[0.584s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extension 'colcon_meta'
+[0.584s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extensions ['ros']
+[0.585s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extension 'ros'
+[0.585s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extensions ['cmake', 'python']
+[0.585s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extension 'cmake'
+[0.585s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extension 'python'
+[0.585s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extensions ['python_setup_py']
+[0.585s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx) by extension 'python_setup_py'
+[0.585s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extensions ['ignore', 'ignore_ament_install']
+[0.585s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extension 'ignore'
+[0.585s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extension 'ignore_ament_install'
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extensions ['colcon_pkg']
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extension 'colcon_pkg'
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extensions ['colcon_meta']
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extension 'colcon_meta'
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extensions ['ros']
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extension 'ros'
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extensions ['cmake', 'python']
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extension 'cmake'
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extension 'python'
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extensions ['python_setup_py']
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todonginx/etc/nginx/conf.d) by extension 'python_setup_py'
+[0.587s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extensions ['ignore', 'ignore_ament_install']
+[0.587s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extension 'ignore'
+[0.587s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extension 'ignore_ament_install'
+[0.587s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extensions ['colcon_pkg']
+[0.587s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extension 'colcon_pkg'
+[0.587s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extensions ['colcon_meta']
+[0.587s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extension 'colcon_meta'
+[0.587s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extensions ['ros']
+[0.587s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extension 'ros'
+[0.587s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extensions ['cmake', 'python']
+[0.587s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extension 'cmake'
+[0.587s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extension 'python'
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extensions ['python_setup_py']
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb) by extension 'python_setup_py'
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extensions ['ignore', 'ignore_ament_install']
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extension 'ignore'
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extension 'ignore_ament_install'
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extensions ['colcon_pkg']
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extension 'colcon_pkg'
+[0.589s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extensions ['colcon_meta']
+[0.589s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extension 'colcon_meta'
+[0.589s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extensions ['ros']
+[0.589s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extension 'ros'
+[0.589s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extensions ['cmake', 'python']
+[0.589s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extension 'cmake'
+[0.589s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extension 'python'
+[0.589s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extensions ['python_setup_py']
+[0.589s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets) by extension 'python_setup_py'
+[0.589s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extensions ['ignore', 'ignore_ament_install']
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extension 'ignore'
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extension 'ignore_ament_install'
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extensions ['colcon_pkg']
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extension 'colcon_pkg'
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extensions ['colcon_meta']
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extension 'colcon_meta'
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extensions ['ros']
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extension 'ros'
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extensions ['cmake', 'python']
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extension 'cmake'
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extension 'python'
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extensions ['python_setup_py']
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/assets/style) by extension 'python_setup_py'
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extensions ['ignore', 'ignore_ament_install']
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extension 'ignore'
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extension 'ignore_ament_install'
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extensions ['colcon_pkg']
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extension 'colcon_pkg'
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extensions ['colcon_meta']
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extension 'colcon_meta'
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extensions ['ros']
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extension 'ros'
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extensions ['cmake', 'python']
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extension 'cmake'
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extension 'python'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extensions ['python_setup_py']
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/layouts) by extension 'python_setup_py'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extensions ['ignore', 'ignore_ament_install']
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extension 'ignore'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extension 'ignore_ament_install'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extensions ['colcon_pkg']
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extension 'colcon_pkg'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extensions ['colcon_meta']
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extension 'colcon_meta'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extensions ['ros']
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extension 'ros'
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extensions ['cmake', 'python']
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extension 'cmake'
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extension 'python'
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extensions ['python_setup_py']
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/middleware) by extension 'python_setup_py'
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extensions ['ignore', 'ignore_ament_install']
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extension 'ignore'
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extension 'ignore_ament_install'
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extensions ['colcon_pkg']
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extension 'colcon_pkg'
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extensions ['colcon_meta']
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extension 'colcon_meta'
+[0.594s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extensions ['ros']
+[0.594s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extension 'ros'
+[0.594s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extensions ['cmake', 'python']
+[0.594s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extension 'cmake'
+[0.594s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extension 'python'
+[0.594s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extensions ['python_setup_py']
+[0.594s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/pages) by extension 'python_setup_py'
+[0.594s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extensions ['ignore', 'ignore_ament_install']
+[0.594s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extension 'ignore'
+[0.594s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extension 'ignore_ament_install'
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extensions ['colcon_pkg']
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extension 'colcon_pkg'
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extensions ['colcon_meta']
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extension 'colcon_meta'
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extensions ['ros']
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extension 'ros'
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extensions ['cmake', 'python']
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extension 'cmake'
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extension 'python'
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extensions ['python_setup_py']
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/plugins) by extension 'python_setup_py'
+[0.595s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extensions ['ignore', 'ignore_ament_install']
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extension 'ignore'
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extension 'ignore_ament_install'
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extensions ['colcon_pkg']
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extension 'colcon_pkg'
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extensions ['colcon_meta']
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extension 'colcon_meta'
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extensions ['ros']
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extension 'ros'
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extensions ['cmake', 'python']
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extension 'cmake'
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extension 'python'
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extensions ['python_setup_py']
+[0.596s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/static) by extension 'python_setup_py'
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extensions ['ignore', 'ignore_ament_install']
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extension 'ignore'
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extension 'ignore_ament_install'
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extensions ['colcon_pkg']
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extension 'colcon_pkg'
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extensions ['colcon_meta']
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extension 'colcon_meta'
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extensions ['ros']
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extension 'ros'
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extensions ['cmake', 'python']
+[0.597s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extension 'cmake'
+[0.598s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extension 'python'
+[0.598s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extensions ['python_setup_py']
+[0.598s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/ch06/todoweb/store) by extension 'python_setup_py'
+[0.598s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extensions ['ignore', 'ignore_ament_install']
+[0.598s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extension 'ignore'
+[0.598s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extension 'ignore_ament_install'
+[0.598s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extensions ['colcon_pkg']
+[0.598s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extension 'colcon_pkg'
+[0.598s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extensions ['colcon_meta']
+[0.598s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extension 'colcon_meta'
+[0.598s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extensions ['ros']
+[0.599s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extension 'ros'
+[0.599s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extensions ['cmake', 'python']
+[0.599s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extension 'cmake'
+[0.599s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extension 'python'
+[0.599s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extensions ['python_setup_py']
+[0.599s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gcp-cloud-run-challenge) by extension 'python_setup_py'
+[0.599s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extensions ['ignore', 'ignore_ament_install']
+[0.599s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extension 'ignore'
+[0.599s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extension 'ignore_ament_install'
+[0.599s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extensions ['colcon_pkg']
+[0.599s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extension 'colcon_pkg'
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extensions ['colcon_meta']
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extension 'colcon_meta'
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extensions ['ros']
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extension 'ros'
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extensions ['cmake', 'python']
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extension 'cmake'
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extension 'python'
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extensions ['python_setup_py']
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/gke-deploy-yaml) by extension 'python_setup_py'
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extensions ['ignore', 'ignore_ament_install']
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extension 'ignore'
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extension 'ignore_ament_install'
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extensions ['colcon_pkg']
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extension 'colcon_pkg'
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extensions ['colcon_meta']
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extension 'colcon_meta'
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extensions ['ros']
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extension 'ros'
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extensions ['cmake', 'python']
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extension 'cmake'
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extension 'python'
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extensions ['python_setup_py']
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence) by extension 'python_setup_py'
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extensions ['ignore', 'ignore_ament_install']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extension 'ignore'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extension 'ignore_ament_install'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extensions ['colcon_pkg']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extension 'colcon_pkg'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extensions ['colcon_meta']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extension 'colcon_meta'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extensions ['ros']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extension 'ros'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extensions ['cmake', 'python']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extension 'cmake'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extension 'python'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extensions ['python_setup_py']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/downloads) by extension 'python_setup_py'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extensions ['ignore', 'ignore_ament_install']
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extension 'ignore'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extension 'ignore_ament_install'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extensions ['colcon_pkg']
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extension 'colcon_pkg'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extensions ['colcon_meta']
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extension 'colcon_meta'
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extensions ['ros']
+[0.603s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extension 'ros'
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extensions ['cmake', 'python']
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extension 'cmake'
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extension 'python'
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extensions ['python_setup_py']
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download) by extension 'python_setup_py'
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extensions ['ignore', 'ignore_ament_install']
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extension 'ignore'
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extension 'ignore_ament_install'
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extensions ['colcon_pkg']
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extension 'colcon_pkg'
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extensions ['colcon_meta']
+[0.604s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extension 'colcon_meta'
+[0.605s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extensions ['ros']
+[0.605s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extension 'ros'
+[0.605s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extensions ['cmake', 'python']
+[0.605s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extension 'cmake'
+[0.605s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extension 'python'
+[0.605s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extensions ['python_setup_py']
+[0.605s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-cloud-intelligence/google-images-download/images) by extension 'python_setup_py'
+[0.605s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extensions ['ignore', 'ignore_ament_install']
+[0.605s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extension 'ignore'
+[0.605s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extension 'ignore_ament_install'
+[0.605s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extensions ['colcon_pkg']
+[0.606s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extension 'colcon_pkg'
+[0.606s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extensions ['colcon_meta']
+[0.606s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extension 'colcon_meta'
+[0.606s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extensions ['ros']
+[0.606s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extension 'ros'
+[0.606s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extensions ['cmake', 'python']
+[0.606s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extension 'cmake'
+[0.606s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extension 'python'
+[0.606s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extensions ['python_setup_py']
+[0.606s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download) by extension 'python_setup_py'
+[0.606s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extensions ['ignore', 'ignore_ament_install']
+[0.606s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extension 'ignore'
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extension 'ignore_ament_install'
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extensions ['colcon_pkg']
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extension 'colcon_pkg'
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extensions ['colcon_meta']
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extension 'colcon_meta'
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extensions ['ros']
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extension 'ros'
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extensions ['cmake', 'python']
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extension 'cmake'
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extension 'python'
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extensions ['python_setup_py']
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images) by extension 'python_setup_py'
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extensions ['ignore', 'ignore_ament_install']
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extension 'ignore'
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extension 'ignore_ament_install'
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extensions ['colcon_pkg']
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extension 'colcon_pkg'
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extensions ['colcon_meta']
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extension 'colcon_meta'
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extensions ['ros']
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extension 'ros'
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extensions ['cmake', 'python']
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extension 'cmake'
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extension 'python'
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extensions ['python_setup_py']
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/face) by extension 'python_setup_py'
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extensions ['ignore', 'ignore_ament_install']
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extension 'ignore'
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extension 'ignore_ament_install'
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extensions ['colcon_pkg']
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extension 'colcon_pkg'
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extensions ['colcon_meta']
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extension 'colcon_meta'
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extensions ['ros']
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extension 'ros'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extensions ['cmake', 'python']
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extension 'cmake'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extension 'python'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extensions ['python_setup_py']
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/google-images-download/images/flowers) by extension 'python_setup_py'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/log) by extensions ['ignore', 'ignore_ament_install']
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/log) by extension 'ignore'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/log) ignored
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extensions ['ignore', 'ignore_ament_install']
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extension 'ignore'
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extension 'ignore_ament_install'
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extensions ['colcon_pkg']
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extension 'colcon_pkg'
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extensions ['colcon_meta']
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extension 'colcon_meta'
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extensions ['ros']
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extension 'ros'
+[0.612s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extensions ['cmake', 'python']
+[0.612s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extension 'cmake'
+[0.612s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extension 'python'
+[0.612s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extensions ['python_setup_py']
+[0.612s] Level 1:colcon.colcon_core.package_identification:_identify(/home/sewan.gu/second/workspace-cloud/google-gcp-basics/todoapp) by extension 'python_setup_py'
+[0.612s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
