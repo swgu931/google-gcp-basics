@@ -1,0 +1,46 @@
+
+import subprocess
+import os
+
+ret = subprocess.call(`hostname -I`, shell=True)
+print(ret)
+
+
+
+
+import sys
+import ruamel.yaml
+
+yaml = ruamel.yaml.YAML()
+# yaml.preserve_quotes = True
+
+file_path = /opt/nav2_ws/install/cloud_trans/share/cloud_trans/config/params.simple.yaml
+
+with open(file_path) as fp:
+    data = yaml.load(fp)
+
+for elem in data['cloud_trans_cloud']['ros__parameters']:
+    if elem['cloud_ip']
+         elem['cloud_ip'] = 10.56.2.12
+         break  # no need to iterate further
+yaml.dump(data, sys.stdout)
+
+
+
+
+
+
+
+
+
+#!/bin/bash
+
+current_ip_addr=`hostname -I`
+echo $current_ip_addr
+export current_ip_addr
+
+
+
+
+
+

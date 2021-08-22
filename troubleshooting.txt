@@ -1,0 +1,4 @@
+
+make sure of the following for kubernetes after gcp cluster login
+export KUBECONFIG=/etc/kubernetes/admin.conf
+
