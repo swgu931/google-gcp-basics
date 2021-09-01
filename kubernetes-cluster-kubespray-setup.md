@@ -56,16 +56,21 @@ $ sysctl -w net.ipv4.ip_forward=1
 pip install ansible netaddr
 git clone https://github.com/kubernetes-sigs/kubespray
 cd kubespray && git checkout release-2.11
-(~/kubespray) pip install -r requirements.txt
+
+# Install dependencies from ``requirements.txt``
+(~/kubespray) pip3 install -r requirements.txt
 ```
 ```
 cd ~/kubespray
 
+# Copy ``inventory/sample`` as ``inventory/mycluster``
 cp -rfp inventory/sample inventory/mycluster
+
+# Update Ansible inventory file with inventory builder
 declare -a IPS=(10.90.65.11 10.90.65.12 10.90.65.13 10.90.65.21)
 CONFIG_FILE=inventory/mycluster
 chmod a+x contrib/inventory_builder/inventory.py 
-contrib/inventory_builder/inventory.py ${IPS[0]}
+python3 contrib/inventory_builder/inventory.py ${IPS[0]}
 ```
 
 ## 3) Setup K8s Cluster server in operation server
@@ -119,7 +124,12 @@ dashboard_enabled: true
 ## 5) Install Cluster 
 
 ```
-(~/kubespray) $ ansible-playbook -i ./inventory/mycluster/hosts.ini ./cluster.yml
+# Deploy Kubespray with Ansible Playbook - run the playbook as root
+# The option `--become` is required, as for example writing SSL keys in /etc/,
+# installing packages and interacting with various systemd daemons.
+# Without --become the playbook will fail to run!
+
+(~/kubespray) $ ansible-playbook -i ./inventory/mycluster/hosts.ini  --become --become-user=root ./cluster.yml
 ```
 ```
 master01:~# kubectl get nodes

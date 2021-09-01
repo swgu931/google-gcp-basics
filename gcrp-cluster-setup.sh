@@ -1,8 +1,10 @@
 #!/bin/bash
 
-1) gcloud components install kubectl
+#1) gcloud components install kubectl
+## docker run
 
-2) Install the Bazel build system : Using Bazel's apt repository
+
+#2) Install the Bazel build system : Using Bazel's apt repository
 
 sudo apt install curl gnupg
 curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor > bazel.gpg
@@ -36,6 +38,7 @@ sudo apt install openjdk-11-jdk
 
 git clone https://github.com/googlecloudrobotics/core
 cd core
+
 
 gcloud auth application-default login
 gcloud auth configure-docker
