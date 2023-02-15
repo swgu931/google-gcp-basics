@@ -4,6 +4,7 @@
  - All source used in this folder come from the ref.
  - gcloud : https://cloud.google.com/sdk/gcloud/reference 
  - gsutil : https://cloud.google.com/storage/docs/gsutil/
+ - gcp cli install: https://cloud.google.com/sdk/docs/install-sdk?hl=ko
 
 
 ## Using docker google/cloud-sdk not to install google cloud sdk                          
@@ -12,6 +13,10 @@ $docker run -it --rm --net host -v ~/cloud-workspace/google-gcp-access:/shared:r
 ```
 
 ## in the shell of docker container 
+0. auth list
+```
+gcloud auth list
+```
 
 1. login
 ```
@@ -27,8 +32,8 @@ gcloud projects create project-cloud-test --set-as-default
 
 ```
 gcloud config set project project-cloud-test     # project in accountn@googlemail.com
-gcloud config set compute/zone asia-northeast3   # Seoul region
-
+gcloud config set compute/region asia-northeast3     # region 
+gcloud config set compute/zone asia-northeast3-a     # zone in that region
 ```
 3. GKE cluster create
 ```
@@ -88,7 +93,8 @@ kubectl proxy --port=8001
 ```
 gcloud auth login
 gcloud config set project project-cloud-test     # project in accountn@googlemail.com
-gcloud config set compute/zone asia-northeast3   # Seoul region
+gcloud config set compute/region asia-northeast3     # region 
+gcloud config set compute/zone asia-northeast3-a     # zone in that region
 gcloud container clusters get-credentials swever-cloud
 kubectl get nodes  
 ```
