@@ -97,11 +97,56 @@ gcloud compute instances create gcp-instance-cloudrobotics \
   --scopes=https://www.googleapis.com/auth/cloud-platform
 ```
 
-
-
-## reference
+## Allow ICMP traffic in your firewall
+- You need to create a firewall rule to allow ICMP (ping) from 0.0.0.0/0.
+```
+gcloud compute firewall-rules create allow-icmp \
+  --network=default \
+  --allow=icmp \
+  --source-ranges=0.0.0.0/0 \
+  --target-tags=cloudrobotics \
+  --description="Allow ping to instances tagged with cloudrobotics"
 ```
 
+```
+gcloud compute instances list
+```
+```
+gcloud compute firewall-rules create --network=NETWORK default-allow-ssh --allow=tcp:22
+```
+## login to compute instance via ssh
+gcloud compute firewall-rules create allow-icmp \
+  --network=default \
+  --allow=icmp \
+  --source-ranges=0.0.0.0/0 \
+  --target-tags=cloudrobotics \
+  --description="Allow ping to instances tagged with cloudrobotics"
+```
+gcloud compute ssh --zone=asia-northeast3-a gcp-cloud-test
+```
+
+or
+
+```
+gcloud compute ssh --zone=asia-northeast3-a <username>@gcp-cloud-test 
+```
+
+## stop/start/delete
+
+```
+gcloud compute instances stop gcp-cloud-test --zone=asia-northeast3-a
+gcloud compute instances start gcp-cloud-test --zone=asia-northeast3-a
+gcloud compute instances delete gcp-cloud-test3 --zone=asia-northeast3-a
+```
+
+## in case that application acces to google cloud
+```
+gcloud auth application-default login
+```
+
+---
+## Reference
+```
 gcloud beta compute \
 --project=$PROJECT_ID instances create-with-container cloud-nav2 \
 --zone=asia-northeast3-a \
@@ -127,33 +172,3 @@ gcloud beta compute \
 ```
 
 
-```
-gcloud compute instances list
-```
-```
-gcloud compute firewall-rules create --network=NETWORK default-allow-ssh --allow=tcp:22
-```
-## login to compute instance via ssh
-
-```
-gcloud compute ssh --zone=asia-northeast3-a gcp-cloud-test
-```
-
-or
-
-```
-gcloud compute ssh --zone=asia-northeast3-a <username>@gcp-cloud-test 
-```
-
-## stop/start/delete
-
-```
-gcloud compute instances stop gcp-cloud-test --zone=asia-northeast3-a
-gcloud compute instances start gcp-cloud-test --zone=asia-northeast3-a
-gcloud compute instances delete gcp-cloud-test3 --zone=asia-northeast3-a
-```
-
-## in case that application acces to google cloud
-```
-gcloud auth application-default login
-```
