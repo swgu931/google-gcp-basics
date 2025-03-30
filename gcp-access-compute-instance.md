@@ -1,4 +1,4 @@
-# gcp access compute instance howto
+# Howto Create gcp compute instance and Delete them
 
 - ref: https://cloud.google.com/sdk/gcloud/reference/compute/instances/
 
@@ -143,6 +143,31 @@ gcloud compute instances delete gcp-cloud-test3 --zone=asia-northeast3-a
 ```
 gcloud auth application-default login
 ```
+
+
+
+# Delete all the resource so as not to pay anything.
+- How to remove (delete) all resources so you don't get charged
+
+```
+# Delete the VM instance
+gcloud compute instances delete gcp-instance-cloudrobotics \
+  --zone=asia-northeast3-a
+
+
+# Delete the static external IP (if you reserved one manually)  
+gcloud compute addresses list
+gcloud compute addresses delete YOUR_IP_NAME --region=YOUR_REGION
+
+
+# Delete firewall rules (optional)
+gcloud compute firewall-rules delete allow-icmp
+  
+#  
+gcloud iam service-accounts delete cloudrobotics-sa@YOUR_PROJECT_ID.iam.gserviceaccount.com
+```
+  
+
 
 ---
 ## Reference
