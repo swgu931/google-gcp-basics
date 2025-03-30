@@ -139,7 +139,7 @@ gcloud compute instances start gcp-cloud-test --zone=asia-northeast3-a
 gcloud compute instances delete gcp-cloud-test3 --zone=asia-northeast3-a
 ```
 
-## in case that application acces to google cloud
+## In case that application acces to google cloud
 ```
 gcloud auth application-default login
 ```
