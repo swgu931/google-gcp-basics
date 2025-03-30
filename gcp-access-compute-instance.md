@@ -64,19 +64,66 @@ gcloud compute instances create gcp-instance-cloudrobotics \
   --subnet=YOUR_SUBNET_NAME
 ```  
 
+## Error like no serviceacount 
+- The resource '60051663133-compute@developer.gserviceaccount.com' of type 'serviceAccount' was not found
+### Option 1:
+```
+gcloud services disable compute.googleapis.com
+gcloud services enable compute.googleapis.com
+```
+### Option 2:
+```
+YOUR_PROJECT_ID=cloud-robot-20200731
 
-- reference
+# Create a custom service account
+gcloud iam service-accounts create cloudrobotics-sa \
+  --display-name="Cloud Robotics VM Service Account"
+
+# Give it basic permissions
+gcloud projects add-iam-policy-binding $YOUR_PROJECT_ID \
+  --member="serviceAccount:cloudrobotics-sa@$YOUR_PROJECT_ID.iam.gserviceaccount.com" \
+  --role="roles/compute.instanceAdmin.v1"
+
+# Re-run the instance creation with this service account
+gcloud compute instances create gcp-instance-cloudrobotics \
+  --image-project=ubuntu-os-cloud \
+  --image=ubuntu-2004-focal-v20250313 \
+  --zone=asia-northeast3-a \
+  --machine-type=e2-micro \
+  --tags=cloud,robotics,cloudrobotics,control \
+  --network=default \
+  --subnet=default \
+  --service-account=cloudrobotics-sa@$YOUR_PROJECT_ID.iam.gserviceaccount.com \
+  --scopes=https://www.googleapis.com/auth/cloud-platform
 ```
 
-gcloud beta compute --project=$PROJECT_ID instances create-with-container cloud-nav2 \
---zone=asia-northeast3-a --machine-type=n1-standard-1 --subnet=default --network-tier=PREMIUM \ 
---metadata=google-logging-enabled=true --maintenance-policy=MIGRATE \
+
+
+## reference
+```
+
+gcloud beta compute \
+--project=$PROJECT_ID instances create-with-container cloud-nav2 \
+--zone=asia-northeast3-a \
+--machine-type=n1-standard-1 \
+--subnet=default \
+--network-tier=PREMIUM \ 
+--metadata=google-logging-enabled=true \
+--maintenance-policy=MIGRATE \
 --service-account=60051663133-compute@developer.gserviceaccount.com \
 --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
---image=cos-stable-81-12871-1185-0 --image-project=cos-cloud --boot-disk-size=10GB --boot-disk-type=pd-standard \
---boot-disk-device-name=cloud-nav2 --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring \
---container-image=ubuntu:18.04 --container-restart-policy=always \
---labels=container-vm=cos-stable-81-12871-1185-0 --reservation-affinity=any
+--image=cos-stable-81-12871-1185-0 \
+--image-project=cos-cloud \
+--boot-disk-size=10GB \
+--boot-disk-type=pd-standard \
+--boot-disk-device-name=cloud-nav2 \
+--no-shielded-secure-boot \
+--shielded-vtpm \
+--shielded-integrity-monitoring \
+--container-image=ubuntu:18.04 \
+--container-restart-policy=always \
+--labels=container-vm=cos-stable-81-12871-1185-0 \
+--reservation-affinity=any
 ```
 
 
