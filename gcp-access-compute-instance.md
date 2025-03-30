@@ -5,6 +5,11 @@
 ## Prerequisite
 - Install google cloud sdk & create google account
 
+## gcloud init
+```
+gcloud init
+```
+
 ## gcloud login
 
 ```
@@ -16,10 +21,22 @@ gcloud config set compute/zone asia-northeast3
 gcloud config get-value compute/zone
 ```
 
-## create compute instance
+## Default Network should exist before creating compute zone
 ```
-gcloud compute instances create gcp-cloud-test --source-snapshot=https://compute.googleapis.com/compute/v1/projects/$PROJECT_ID/global/snapshots/snapshot-cloud \
---zone=asia-northeast3-a --machine-type=n1-standard-1 --preemptible --tags=socket-test,socket-test-send 
+gcloud compute networks list
+gcloud compute networks subnets list --regions=asia-northeast3
+
+gcloud compute networks create default --subnet-mode=auto
+```
+
+## create compute instance with snapshot
+```
+gcloud compute instances create gcp-cloud-test \
+--source-snapshot=https://compute.googleapis.com/compute/v1/projects/$PROJECT_ID/global/snapshots/snapshot-cloud \
+--zone=asia-northeast3-a \
+--machine-type=n1-standard-1 \
+--preemptible \
+--tags=socket-test,socket-test-send 
 ```
 
 or
@@ -34,7 +51,21 @@ gcloud compute instances create gcp-instance-python \
 --zone=asia-northeast3-a \
 --machine-type=n1-standard-1 
 ```
-- ref:
+
+## create compute instance without snapshot 
+```
+gcloud compute instances create gcp-instance-cloudrobotics \
+  --image-project=ubuntu-os-cloud \
+  --image=ubuntu-2004-focal-v20250313 \
+  --zone=asia-northeast3-a \
+  --machine-type=e2-micro \
+  --tags=cloud,robotics,cloudrobotics,control \
+  --network=YOUR_NETWORK_NAME \
+  --subnet=YOUR_SUBNET_NAME
+```  
+
+
+- reference
 ```
 
 gcloud beta compute --project=$PROJECT_ID instances create-with-container cloud-nav2 \
